@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas Doces</title>
+    <title>Detalhe da Receita</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../build/main.js" type="module" defer></script>
+    <script src="../build/receita.js" type="module" defer></script>
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -13,13 +13,12 @@
         <nav class="bg-green-600 text-white p-4 flex justify-center gap-6 rounded-lg">
             <a href="index.html" class="hover:underline">Início</a>
             <a href="salgados.html" class="hover:underline">Salgados</a>
-            <a href="doces.html" class="hover:underline font-bold">Doces</a>
+            <a href="doces.html" class="hover:underline">Doces</a>
         </nav>
     </header>
 
     <main class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-6 text-center">🍬 Receitas Doces</h2>
-        <div id="receitas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="receita-detalhe" class="bg-white p-6 rounded-lg shadow"></div>
     </main>
 
 </body>

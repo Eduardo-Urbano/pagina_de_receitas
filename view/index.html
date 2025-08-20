@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receitas Caseiras</title>
+    <title>Receitas.com</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -16,12 +16,63 @@
     </header>
 
     <main class="text-center p-8">
-        <h1 class="text-3xl font-bold mb-4">🍴 Bem-vindo ao site de Receitas!</h1>
-        <p class="text-gray-700 max-w-xl mx-auto">
+        <h1 class="text-5xl font-bold mb-6">🍴 Bem-vindo ao Receita.com!</h1>
+        <br>
+        <br>
+        <p class="text-gray-700 max-w-xl mx-auto mb-8 text-4xl">
             Aqui você encontra receitas simples e deliciosas de doces e salgados.  
             Clique no menu acima para explorar.
         </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+ 
+        <div class="relative w-full max-w-4xl mx-auto">
+            <div id="carousel" class="overflow-hidden rounded-lg shadow-lg relative">
+                <div class="flex transition-transform duration-500" id="carousel-inner">
+                    <img src="../img/bolo.jpg" alt="Bolo de Chocolate" class="w-full flex-shrink-0 object-cover h-64">
+                    <img src="../img/coxinha.jpg" alt="Coxinha" class="w-full flex-shrink-0 object-cover h-64">
+                    <img src="../img/tortaMorango.png" alt="Torta de Morango" class="w-full flex-shrink-0 object-cover h-64">
+                    <img src="../img/empada.png" alt="Empada de Palmito" class="w-full flex-shrink-0 object-cover h-64">
+                    <img src="../img/cookies.jpg" alt="Cookies de Chocolate" class="w-full flex-shrink-0 object-cover h-64">
+                    <img src="../img/esfiha.jpg" alt="Esfihas de Carne" class="w-full flex-shrink-0 object-cover h-64">
+                    <img src="../img/pudim.png" alt="Pudim de Leite" class="w-full flex-shrink-0 object-cover h-64">
+                    <img src="../img/quiche.jpg" alt="Quiche de Queijo" class="w-full flex-shrink-0 object-cover h-64">
+                </div>
+            </div>
+
+            <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-5 p-2 rounded-full hover:bg-opacity-30 opacity-30">◀</button>
+            <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-5 p-2 rounded-full hover:bg-opacity-30 opacity-30">▶</button>
+        </div>
     </main>
-    
+
+    <script>
+        const carouselInner = document.getElementById('carousel-inner');
+        const slides = carouselInner.children;
+        const total = slides.length;
+        let index = 0;
+
+        function showSlide(i) {
+            carouselInner.style.transform = `translateX(-${i * 100}%)`;
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            index = (index - 1 + total) % total;
+            showSlide(index);
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            index = (index + 1) % total;
+            showSlide(index);
+        });
+
+        setInterval(() => {
+            index = (index + 1) % total;
+            showSlide(index);
+        }, 3000);
+    </script>
+
 </body>
 </html>
