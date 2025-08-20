@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Receitas Salgadas</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="./build/doces.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas Doces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-100 font-sans">
 
-    <header class="text-center p-4 bg-green-600 mb-6">
-        <nav class="text-2xl bg-green-600 text-white p-4 flex gap-6 justify-center">
+    <header class="text-center p-4 bg-green-100 mb-6">
+        <nav class="bg-green-600 text-white p-4 flex justify-center gap-6 rounded-lg">
             <a href="index.html" class="hover:underline">Início</a>
             <a href="salgados.html" class="hover:underline">Salgados</a>
-            <a href="doces.html" class="hover:underline">Doces</a>
+            <a href="doces.html" class="hover:underline font-bold">Doces</a>
         </nav>
     </header>
 
-    <main class="p-6">
-        <h2 class="text-2xl font-bold mb-4">Receitas Salgadas</h2>
-        <div id="lista-salgados" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    <main id="container" class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6 text-center">🍬 Receitas Doces</h2>
+        <div id="receitas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
+    <script src="build/main.js" type="module"></script>
 </body>
 </html>

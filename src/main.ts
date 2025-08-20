@@ -1,45 +1,30 @@
-import { receitas } from "./receitas.js";
+import { receitasDoces, receitasSalgadas } from "./receitas.js";
 
-// Pega o container do HTML
-const container = document.getElementById("receitas");
-
-if (container) {
-  receitas.forEach(receita => {
-    // Cria um card
+function criarCard(receita: { nome: string; descricao: string; imagem: string }) {
     const card = document.createElement("div");
-    card.className = "bg-white p-4 rounded-xl shadow hover:shadow-lg transition";
+    card.className = "bg-white shadow-md rounded-lg overflow-hidden";
 
-    // Título
-    const titulo = document.createElement("h2");
-    titulo.textContent = receita.titulo;
-    titulo.className = "text-xl font-bold text-green-700 mb-2";
-
-    // Descrição
-    const descricao = document.createElement("p");
-    descricao.textContent = receita.descricao;
-    descricao.className = "text-gray-600 mb-3";
-
-    // Ingredientes
-    const lista = document.createElement("ul");
-    lista.className = "list-disc list-inside text-sm text-gray-700 mb-3";
-    receita.ingredientes.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      lista.appendChild(li);
-    });
-
-    // Modo de preparo
-    const preparo = document.createElement("p");
-    preparo.textContent = receita.preparo;
-    preparo.className = "text-gray-800 text-sm";
-
-    // Junta tudo no card
-    card.appendChild(titulo);
-    card.appendChild(descricao);
-    card.appendChild(lista);
-    card.appendChild(preparo);
-
-    // Adiciona no container
-    container.appendChild(card);
-  });
+    card.innerHTML = `
+        <img src="${receita.imagem}" alt="${receita.nome}" class="w-full h-48 object-cover">
+        <div class="p-4">
+            <h3 class="text-lg font-bold mb-2">${receita.nome}</h3>
+            <p class="text-gray-600">${receita.descricao}</p>
+        </div>
+    `;
+    return card;
 }
+
+function carregarReceitas() {
+    const container = document.getElementById("receitas");
+    if (!container) return;
+
+    const pagina = window.location.pathname.split("/").pop();
+
+    if (pagina === "doces.html") {
+        receitasDoces.forEach((r) => container.appendChild(criarCard(r)));
+    } else if (pagina === "salgados.html") {
+        receitasSalgadas.forEach((r) => container.appendChild(criarCard(r)));
+    }
+}
+
+document.addEventListener("DOMContentLoaded", carregarReceitas);
