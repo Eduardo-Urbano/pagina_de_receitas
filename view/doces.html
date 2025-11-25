@@ -7,10 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../build/main.js" type="module" defer></script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
 
-    <header class="text-center p-4 bg-green-100 mb-6">
-        <nav class="bg-green-600 text-white p-4 flex justify-center gap-6 rounded-lg">
+    <header class="text-center bg-green-100 mb-6">
+        <nav class="bg-green-600 text-white text-xl p-4 flex justify-center gap-6 rounded-b-lg shadow-xl">
             <a href="index.html" class="hover:underline">Início</a>
             <a href="salgados.html" class="hover:underline">Salgados</a>
             <a href="doces.html" class="hover:underline font-bold">Doces</a>
@@ -18,9 +18,15 @@
     </header>
 
     <main class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold mb-6 text-center">🍬 Receitas Doces</h2>
+        <h2 class="text-2xl font-bold mb-6 text-center">🍬Doces🍬</h2>
         <div id="receitas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
+
+    <footer class="bg-green-600 rounded-t-lg text-white justify-items-center w-full p-4 mt-auto">
+
+        <p>©Receitinhas.com</p>
+
+    </footer>
 
 </body>
 </html>

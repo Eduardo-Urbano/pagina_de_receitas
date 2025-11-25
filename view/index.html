@@ -6,72 +6,136 @@
     <title>Receitas.com</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
 
-    <header class="text-center p-4 bg-green-100 mb-6">
-        <nav class="bg-green-600 text-white font-medium p-4 flex justify-center gap-6 rounded-lg">
+    <header class="text-center bg-green-100 mb-6">
+        <nav class="bg-green-600 text-white text-xl p-4 flex justify-center gap-6 rounded-b-lg shadow-xl">
             <a href="salgados.html" class="hover:underline">Salgados</a>
             <a href="doces.html" class="hover:underline">Doces</a>
         </nav>
     </header>
 
     <main class="text-center p-8">
-        <h1 class="text-5xl font-bold mb-6">🍴 Bem-vindo ao Receita.com!</h1>
-        <br>
-        <br>
-        <p class="text-gray-700 max-w-xl mx-auto mb-8 text-4xl">
-            Aqui você encontra receitas simples e deliciosas de doces e salgados.  
-            Clique no menu acima para explorar.
-        </p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="flex flex-col gap-10 mt-5 mb-14">
+            <h1 class="text-5xl font-bold">🍴 Bem-vindo ao Receitinhas.com! 🍴</h1>
+            <p class="text-gray-700 max-w-xl mx-auto text-4xl">
+                Aqui você encontra receitas simples e deliciosas, doces e salgadas.
+                Clique no menu acima para explorar.
+            </p>
+        </div>
  
-        <div class="relative w-full max-w-4xl mx-auto">
-            <div id="carousel" class="overflow-hidden rounded-lg shadow-lg relative">
-                <div class="flex transition-transform duration-500" id="carousel-inner">
-                    <img src="../img/bolo.jpg" alt="Bolo de Chocolate" class="w-full flex-shrink-0 object-cover h-64">
-                    <img src="../img/coxinha.jpg" alt="Coxinha" class="w-full flex-shrink-0 object-cover h-64">
-                    <img src="../img/tortaMorango.png" alt="Torta de Morango" class="w-full flex-shrink-0 object-cover h-64">
-                    <img src="../img/empada.png" alt="Empada de Palmito" class="w-full flex-shrink-0 object-cover h-64">
-                    <img src="../img/cookies.jpg" alt="Cookies de Chocolate" class="w-full flex-shrink-0 object-cover h-64">
-                    <img src="../img/esfiha.jpg" alt="Esfihas de Carne" class="w-full flex-shrink-0 object-cover h-64">
-                    <img src="../img/pudim.png" alt="Pudim de Leite" class="w-full flex-shrink-0 object-cover h-64">
-                    <img src="../img/quiche.jpg" alt="Quiche de Queijo" class="w-full flex-shrink-0 object-cover h-64">
+        <div class="flex flex-col flex-grow max-h-[40%]"> 
+            <div class="relative w-full max-w-4xl max-h-[50%] mx-auto">
+                <div id="carossel-1" class="overflow-hidden rounded-lg shadow-lg relative h-[450px]">
+                    <div class="flex transition-transform duration-500" id="carossel-inner-1">
+                 
+                        <img src="../img/coxinha.jpg" alt="Coxinha" class="w-full h-full flex-shrink-0 object-cover">
+                       
+                        <img src="../img/empada.png" alt="Empada de Palmito" class="w-full h-full flex-shrink-0 object-cover">
+                    
+                        <img src="../img/esfiha.jpg" alt="Esfihas de Carne" class="w-full h-full flex-shrink-0 object-cover">
+                       
+                        <img src="../img/quiche.jpg" alt="Quiche de Queijo" class="w-full h-full flex-shrink-0 object-cover">
+                    </div>
                 </div>
+                <button id="prev1" class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full opacity-30 hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+                <button id="next1" class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full opacity-30 hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 6 15 12 9 18"/>
+                    </svg>
+                </button>
             </div>
-
-            <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-5 p-2 rounded-full hover:bg-opacity-30 opacity-30">◀</button>
-            <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-5 p-2 rounded-full hover:bg-opacity-30 opacity-30">▶</button>
+            <div class="relative w-full max-w-4xl my-10 mx-auto">
+                <div id="carossel-2" class="overflow-hidden rounded-lg shadow-lg relative h-[450px]">
+                    <div class="flex transition-transform duration-500" id="carossel-inner-2">
+                        <img src="../img/bolo.jpg" alt="Bolo de Chocolate" class="w-full h-full flex-shrink-0 object-cover">
+                
+                        <img src="../img/tortaMorango.png" alt="Torta de Morango" class="w-full h-full flex-shrink-0 object-cover">
+                
+                        <img src="../img/cookies.jpg" alt="Cookies de Chocolate" class="w-full h-full flex-shrink-0 object-cover">
+                        
+                        <img src="../img/pudim.png" alt="Pudim de Leite" class="w-full h-full flex-shrink-0 object-cover">
+                      
+                    </div>
+                </div>
+                <button id="prev2" class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded-full opacity-30 hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+                <button id="next2" class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded-full opacity-30 hover:opacity-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 6 15 12 9 18"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </main>
 
-    <script>
-        const carouselInner = document.getElementById('carousel-inner');
-        const slides = carouselInner.children;
-        const total = slides.length;
-        let index = 0;
+    <footer class="bg-green-600 rounded-t-lg text-white justify-items-center w-full p-4 mt-auto">
 
-        function showSlide(i) {
-            carouselInner.style.transform = `translateX(-${i * 100}%)`;
+        <p>©Receitinhas.com</p>
+
+    </footer>
+
+    <script>
+
+        const carosselInner1 = document.getElementById('carossel-inner-1');
+        const carosselInner2 = document.getElementById('carossel-inner-2');
+
+        const slides1 = carosselInner1.children;
+        const slides2 = carosselInner2.children;
+
+        const total1 = slides1.length;
+        const total2 = slides2.length;
+
+        let index1 = 0;
+        let index2 = 0;
+
+        function showSlide1(i) {
+            carosselInner1.style.transform = `translateX(-${i * 100}%)`;
         }
 
-        document.getElementById('prev').addEventListener('click', () => {
-            index = (index - 1 + total) % total;
-            showSlide(index);
+        function showSlide2(i) {
+            carosselInner2.style.transform = `translateX(-${i * 100}%)`;
+        }
+
+        // Botões do carrossel de cima
+        document.getElementById('prev1').addEventListener('click', () => {
+            index1 = (index1 - 1 + total1) % total1;
+            showSlide1(index1);
         });
 
-        document.getElementById('next').addEventListener('click', () => {
-            index = (index + 1) % total;
-            showSlide(index);
+        document.getElementById('next1').addEventListener('click', () => {
+            index1 = (index1 + 1) % total1;
+            showSlide1(index1);
         });
+
+        // Botões do carrossel de baixo
+        document.getElementById('prev2').addEventListener('click', () => {
+            index2 = (index2 - 1 + total2) % total2;
+            showSlide2(index2);
+        });
+
+        document.getElementById('next2').addEventListener('click', () => {
+            index2 = (index2 + 1) % total2;
+            showSlide2(index2);
+        });
+
+        // Play automático
+        setInterval(() => {
+            index1 = (index1 + 1) % total1;
+            showSlide1(index1);
+        }, 3000);
 
         setInterval(() => {
-            index = (index + 1) % total;
-            showSlide(index);
-        }, 3000);
+            index2 = (index2 + 1) % total2;
+            showSlide2(index2);
+        }, 3500);
     </script>
 
 </body>
